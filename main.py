@@ -1,3 +1,4 @@
+import ipdb
 import sys
 from antlr4 import *
 from Java9Lexer import Java9Lexer
@@ -8,7 +9,10 @@ def main(argv):
     lexer = Java9Lexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = Java9Parser(stream)
-    tree = parser.getParseListeners()
+    # tree = parser.query()
+    tree = parser.compilationUnit()
+    # ipdb.set_trace()
+    
     print(tree)
  
 if __name__ == '__main__':
