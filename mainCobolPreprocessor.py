@@ -31,15 +31,7 @@ def parseCobol(argv):
 
 
 def main(argv):
-    input_stream = FileStream(argv[1])
-    lexer = Java9Lexer(input_stream)
-    stream = CommonTokenStream(lexer)
-    parser = Java9Parser(stream)
-    # tree = parser.query()
-    tree = parser.compilationUnit()
-    # ipdb.set_trace()
-    print(tree)
-
+    parseCobolPreCompiler(argv)
 
 
  
